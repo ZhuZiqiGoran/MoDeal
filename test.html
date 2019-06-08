@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta charset="UTF-8">
+    <title>Searching Results</title>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <style type="text/css">
+
+        #box {
+            width: 1000px;
+            margin: 0px auto;
+            font-family: 'Times New Roman';
+            font-size: 18px;
+        }
+
+        input {
+            width: 498px;
+            border: 1px solid #c1cdc1;
+            height: 38px;
+            padding: 0 0 0 0px;
+        }
+
+        #search_content {
+            /*font-family: 'Times New Roman'; */
+            font-size: 18px;
+            width: 100px;
+            height: 40px;
+            background: teal;
+            color: white;
+            text-align: center;
+            line-height: 18px;
+            cursor: pointer;
+        }
+
+        #tb {
+            table-layout: fixed;
+        }
+
+        .div-right {
+            position: absolute;
+            right: 40px;
+            top: 20px; /*20*/
+        }
+
+        .div-picture {
+            position: absolute;
+            left: 1px;
+            top: 5px; /*5*/
+        }
+
+        .div-box {
+            position: absolute;
+            left: 130px;
+            top: 40px; /*40*/
+        }
+
+        .table > thead > tr > th {
+            border-color: transparent;
+        }
+
+        .table > tbody > tr > td,
+        .table > tbody > tr > th {
+            border-width: 5px;
+            border-color: transparent;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+
+        <div class="div-right">
+            <a href="file:///C:/Users/Ziqi/Desktop/Sign in.html" target="_blank" align="right">Sign up or log in</a>
+        </div>
+
+        <div class="div-picture">
+            <!--<p><img src="https://lh6.googleusercontent.com/F3ZeSI7euvOescZuJRopWXptVHm4WhMn-B4RpEgl1PsUgqg9EcrVnpnlSHxdWR4Kfr7IumHUJuIi_zvha77-=w2560-h1478" width:120px height:120px /><p>-->
+            <p><img src="C:/Users/Ziqi/Desktop/moyu.jpg" width="120px" height="120px" /></p>
+        </div>
+
+        <form action="/index/" method="post">
+            <!--{% csrf_token %}-->
+            <div class="div-box" id="box">
+                <p>
+                    <input type="text" name="search_content" value=' {{ search_content  }}' placeholder="    Enter product information" autocomplete="off">
+                    <input type="submit" value="Search" id="search_content" button class="btn btn-outline-success my-2 my-sm-0">
+                </p>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+        </form>
+
+            <div class="container-fluid text-center">
+                <div class="row content">
+                    <div class="col-sm-2 sidenav">
+                        <br />
+                        <br />
+                        <p><font size="6" color="teal">Filter</font></p>
+
+                        <div class="container">
+                            <input class="form-control" id="myInputMoneyMin" type="text" placeholder="Enter MIN price..">
+                            <br />
+                            <input class="form-control" id="myInputMoneyMax" type="text" placeholder="Enter MAX price..">
+                            <br />
+                            <input class="form-control" id="myInput" type="text" placeholder="Enter names or sources">
+                        </div>
+                     </div>
+
+
+
+                        <div class="col-sm-8 text-left">
+                                    <table class="table table-hover" id="tb" style="word-break:break-all; word-wrap:break-word; margin:auto">
+
+                                        <tbody id="myTable">
+                                            <tr id="item">
+                                                <td class="text-left" width="30%"><img src="C:/Users/Ziqi/Desktop/moyu.jpg" width="180px" height="180px" /></td>
+                                                <td class="text-left" width="50%">
+                                                    <li><p><font size="6">Macbook Pro</font></p></li>
+                                                    <li><p><font id="price" size="5">2000 </font><p></li>
+                                                    <li><p><font size="4">Amazon</font><p></li>
+                                                </td>
+                                                <td class="text-left" width="20%"><button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="alert('Added to Favorites!')">Add to Favorites</button></td>
+                                            </tr>
+                                            <tr id="item">
+                                                <td class="text-left" width="30%"><img src="C:/Users/Ziqi/Desktop/moyu.jpg" width="180px" height="180px" /></td>
+                                                <td class="text-left" width="50%">
+                                                    <li><p><font size="6">iphone</font></p></li>
+                                                    <li><p><font id="price" size="5">1900 </font><p></li>
+                                                    <li><p><font size="4">Ebay</font><p></li>
+                                                </td>
+
+
+                                                <td class="text-left" width="20%"><button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="alert('Added to Favorites!')">Add to Favorites</button></td>
+                                            </tr>
+                                            <tr id="item">
+                                                <td class="text-left" width="30%"><img src="C:/Users/Ziqi/Desktop/moyu.jpg" width="180px" height="180px" /></td>
+                                                <td class="text-left" width="50%">
+                                                    <li><p><font size="6">macbook air</font></p></li>
+                                                    <li><p><font id="price" size="5">1800 </font><p></li>
+                                                    <li><p><font size="4">BestBuy</font><p></li>
+                                                </td>
+                                                <td class="text-left" width="20%"><button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="alert('Added to Favorites!')">Add to Favorites</button></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                            </div>
+
+                            <script>
+                                $(document).ready(function () {
+                                    var filter_min = 0;
+                                    var filter_max = 10000000;
+                                    $("#myInputMoneyMin").on("keyup", function () {
+                                        filter_min = $(this).val();
+                                        $("#myInputMoneyMax").on("keyup", function () {
+                                            filter_max = $(this).val();
+                                            $("#myTable tr").filter(function () {
+                                                var value = $(this).find("#price").text();
+                                                $(this).toggle(parseFloat(value) >= parseFloat(filter_min) && parseFloat(value) <= parseFloat(filter_max));
+                                            });
+                                        });
+                                    });
+                                });
+
+                                $(document).ready(function () {
+                                    $("#myInput").on("keyup", function () {
+                                        var value = $(this).val().toLowerCase();
+                                        $("#myTable tr").filter(function () {
+                                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                        });
+                                    });
+                                });
+
+                            </script>
+                        </div>
+
+                    </div>
+
+                </div>
+
+</body>
+</html>
